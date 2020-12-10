@@ -36,4 +36,4 @@ class TestCale():
 
 
 if __name__ == '__main__':
-    pytest.main(["test_calc.py"])
+    pytest.main(["test_calc.py", "-s", "-q", "--alluredur=./result/"])
