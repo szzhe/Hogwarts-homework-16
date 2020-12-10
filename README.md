@@ -1,5 +1,5 @@
 
-# 霍格沃兹测试开发学习
+# 霍格沃兹测试开发
 
 - echo "# Hogwarts-homework-16" >> README.md
 - git init
