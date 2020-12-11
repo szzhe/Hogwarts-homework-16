@@ -1,9 +1,10 @@
+import os
+
 import allure
 import pytest
 import yaml
 from selenium import webdriver
 import time
-
 
 @allure.testcase("http://www.github.com")
 @allure.feature("百度搜索")
@@ -21,13 +22,15 @@ def test_steps_demo(test_data1):
         time.sleep(2)
 
     with allure.step("保存图片"):
-        print("gogogo")
-        driver.save_screenshot("./result/b.png")
-        allure.attach.file("./result/b.png", attachment_type=allure.attachment_type.PNG)
+        driver.save_screenshot("./allure-results/b.png")
+        allure.attach.file("./allure-results/b.png", attachment_type=allure.attachment_type.PNG)
 
     with allure.step("关闭浏览器"):
         driver.quit()
 
 
 if __name__ == '__main__':
-    pytest.main(["-sv"], ["test_baidudemo.py"])
+    pytest.main(["test_baidudemo.py", "-v", "-s", "--alluredir", "./allure-results/"])
+    # os.system(r"allure serve allure-results")
+    os.system(r"allure generate --clean allure-results -o allure-report")
+    os.system(r"allure open allure-report")
