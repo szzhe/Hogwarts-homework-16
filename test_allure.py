@@ -5,26 +5,21 @@ import os
 import allure
 import pytest
 
-
 @pytest.fixture(scope="session")
 def login_fixture():
     print("=== 前置登录 ===")
-
 
 @allure.step("步骤1")
 def step_1():
     print("操作步骤---------------1")
 
-
 @allure.step("步骤2")
 def step_2():
     print("操作步骤---------------2")
 
-
 @allure.step("步骤3")
 def step_3():
     print("操作步骤---------------3")
-
 
 @allure.epic("epic 相当于总体描述")
 @allure.feature("测试模块")
@@ -49,7 +44,6 @@ class TestAllureALL:
         step_1()
         step_3()
 
-
 @allure.epic("另一个 epic")
 @allure.feature("查找模块")
 class TestAllureALL2:
@@ -57,7 +51,7 @@ class TestAllureALL2:
     @allure.story("story three")
     def test_case_3(self, login_fixture):
         print("测试用例3")
-        allure.attach.file("./data/data.yaml", "Attach with YAML type", attachment_type=allure.attachment_type.YAML)
+        allure.attach.file("./data/mul.yaml", "Attach with YAML type", attachment_type=allure.attachment_type.YAML)
         step_1()
 
     @allure.story("story four")
@@ -67,7 +61,7 @@ class TestAllureALL2:
         step_3()
 
 if __name__ == '__main__':
-    pytest.main(["test_demo.py", "-v", "-s", "--alluredir", "./allure-results/"])
+    pytest.main(["test_allure.py", "-v", "-s", "--alluredir", "./allure-results/"])
     # os.system(r"allure serve allure-results")
     os.system(r"allure generate --clean allure-results -o allure-report")
     os.system(r"allure open allure-report")

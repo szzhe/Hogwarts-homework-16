@@ -3,7 +3,6 @@ import yaml
 from pythoncode.calculator import Calculator
 import pytest
 
-
 class TestCale():
     def setup_class(self):
         self.cal = Calculator()
@@ -24,7 +23,7 @@ class TestCale():
     def test_sub(self, a, b, expect):
         assert expect == self.cal.sub(a, b)
 
-    @pytest.mark.parametrize("a,b,expect", yaml.safe_load(open("./data.yaml")))
+    @pytest.mark.parametrize("a,b,expect", yaml.safe_load(open("./data/mul.yaml")))
     def test_mul(self, a, b, expect):
         assert expect == self.cal.mul(a, b)
 
@@ -33,7 +32,6 @@ class TestCale():
     ])
     def test_div(self, a, b, expect):
         assert expect == self.cal.div(a, b)
-
 
 if __name__ == '__main__':
     pytest.main(["test_calc.py", "-s", "-q", "--alluredur=./allure-results/"])

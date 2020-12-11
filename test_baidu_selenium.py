@@ -1,5 +1,4 @@
 import os
-
 import allure
 import pytest
 import yaml
@@ -8,7 +7,7 @@ import time
 
 @allure.testcase("http://www.github.com")
 @allure.feature("百度搜索")
-@pytest.mark.parametrize('test_data1', yaml.safe_load(open("data/data.yaml")))
+@pytest.mark.parametrize('test_data1', yaml.safe_load(open("data/mul.yaml")))
 def test_steps_demo(test_data1):
     with allure.step("打开百度网页"):
         driver = webdriver.Chrome()
@@ -28,9 +27,8 @@ def test_steps_demo(test_data1):
     with allure.step("关闭浏览器"):
         driver.quit()
 
-
 if __name__ == '__main__':
-    pytest.main(["test_baidudemo.py", "-v", "-s", "--alluredir", "./allure-results/"])
+    pytest.main(["test_baidu_selenium.py", "-v", "-s", "--alluredir", "./allure-results/"])
     # os.system(r"allure serve allure-results")
     os.system(r"allure generate --clean allure-results -o allure-report")
     os.system(r"allure open allure-report")
