@@ -37,7 +37,7 @@ class TestAllureALL:
     @allure.severity("critical")
     def test_case_1(self, login_fixture):
         """
-        小菠萝测试笔记地址：https://www.cnblogs.com/poloyy/
+        https://www.cnblogs.com/poloyy/
         """
         print("测试用例1")
         step_1()
@@ -57,14 +57,14 @@ class TestAllureALL2:
     @allure.story("story three")
     def test_case_3(self, login_fixture):
         print("测试用例3")
-        allure.attach.file("./allure-report/index.html", allure.attachment_type.HTML)
+        allure.attach.file("./data/data.yaml", "Attach with YAML type", attachment_type=allure.attachment_type.YAML)
         step_1()
 
     @allure.story("story four")
     def test_case_4(self, login_fixture):
         print("测试用例4")
+        allure.attach("'<head></head><body> 一个HTML页面 </body>", "Attach with HTML type", allure.attachment_type.HTML)
         step_3()
-
 
 if __name__ == '__main__':
     pytest.main(["test_demo.py", "-v", "-s", "--alluredir", "./allure-results/"])
