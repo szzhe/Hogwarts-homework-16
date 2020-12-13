@@ -34,6 +34,6 @@ class TestCale():
         assert expect == self.cal.div(a, b)
 
 if __name__ == '__main__':
-    pytest.main(["test_calc.py", "-v", "-s", "--alluredir", "./allure-results/"])
+    pytest.main(["test_calc.py", "--alluredir", "./allure-results/"])
     os.system(r"allure generate --clean allure-results -o allure-report")
     os.system(r"allure open allure-report")

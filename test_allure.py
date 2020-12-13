@@ -61,7 +61,7 @@ class TestAllureALL2:
         step_3()
 
 if __name__ == '__main__':
-    pytest.main(["test_allure.py", "-v", "-s", "--alluredir", "./allure-results/"])
+    pytest.main(["test_allure.py", "--alluredir", "./allure-results/"])
     # os.system(r"allure serve allure-results")
     os.system(r"allure generate --clean allure-results -o allure-report")
     os.system(r"allure open allure-report")
