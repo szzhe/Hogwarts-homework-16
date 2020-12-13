@@ -1,12 +1,17 @@
--
-  - 3
-  - 5
-  - 15
--
-  - -1
-  - -2
-  - 2
--
-  - 0.1
-  - 0.3
-  - 0.03
+datas:
+  - add:
+      - 3
+      - 5
+      - 8
+  - mul:
+      - 0.1
+      - 0.3
+      - 0.03
+myid:
+  - "int"
+  - "minus"
+  - "bigint"
+browser:
+  - "allure"
+  - "pytest"
+  - "unittest"

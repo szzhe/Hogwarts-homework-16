@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/allure-results/203798d7-4ed5-4476-82da-547394c306f9-container.json" />
+    <file url="file://$PROJECT_DIR$/allure-results/5a5a69b0-0436-4ca5-a9c8-725ea9bdbf9d-result.json" />
+    <file url="file://$PROJECT_DIR$/allure-results/68128c23-45dc-4826-964d-07adbbbd9137-container.json" />
+    <file url="file://$PROJECT_DIR$/allure-results/9f9d7899-85ed-4ddd-9d44-1eb41ff03795-container.json" />
+    <file url="file://$PROJECT_DIR$/allure-results/af867b3a-ecb1-4d70-a34d-36a1d718156a-result.json" />
+    <file url="file://$PROJECT_DIR$/allure-results/babebafd-a652-454c-8285-64e57949d89a-result.json" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.6 (Hogwarts)" project-jdk-type="Python SDK" />
 </project>
