@@ -30,7 +30,7 @@ class TestCale():
     def test_add(self, a, b, expect):
         print(">>>", get_dates()[0])
         assert expect == self.cal.add(a, b)
-    #
+
     # @pytest.mark.parametrize("a,b,expect", yaml.safe_load(open("./data/mul.yaml"))["datas"][1],\
     #                          ids=yaml.safe_load(open("./data/mul.yaml"))["myid"])
     # def test_mul(self, a, b, expect):
