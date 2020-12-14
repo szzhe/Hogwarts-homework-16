@@ -7,7 +7,7 @@ import time
 
 @allure.testcase("http://www.github.com")
 @allure.feature("百度搜索")
-@pytest.mark.parametrize('test_data1', yaml.safe_load(open("data/mul.yaml"))["browser"])
+@pytest.mark.parametrize('test_data1', yaml.safe_load(open("data/datas.yml"))["browser"])
 def test_steps_demo(test_data1):
     with allure.step("打开百度网页"):
         driver = webdriver.Chrome()

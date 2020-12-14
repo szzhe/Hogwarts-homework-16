@@ -51,7 +51,7 @@ class TestAllureALL2:
     @allure.story("story three")
     def test_case_3(self, login_fixture):
         print("测试用例3")
-        allure.attach.file("./data/mul.yaml", "Attach with YAML type", attachment_type=allure.attachment_type.YAML)
+        allure.attach.file("./data/datas.yml", "Attach with YAML type", attachment_type=allure.attachment_type.YAML)
         step_1()
 
     @allure.story("story four")

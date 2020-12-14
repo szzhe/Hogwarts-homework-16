@@ -1,0 +1,25 @@
+add:
+  -
+    - 3
+    - 5
+    - 8
+  -
+    - 0.1
+    - 0.3
+    - 0.4
+mul:
+  -
+    - 0.3
+    - 0.4
+    - 0.12
+  -
+    - 3
+    - 4
+    - 12
+myid:
+  - "int"
+  - "minus"
+browser:
+  - "allure"
+  - "pytest"
+  - "unittest"
