@@ -9,7 +9,6 @@ expect_url = ["www.baidu.com", "www.google.com"]
 def back_actual_url(request):
     return request.param
 
-
 # 方法二：param+ids
 # @pytest.fixture(params=actual_url, ids=['baidu', 'google'])
 # def back_actual_url(request):
