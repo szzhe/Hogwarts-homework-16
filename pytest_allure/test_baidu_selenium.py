@@ -28,7 +28,7 @@ def test_steps_demo(test_data1):
         driver.quit()
 
 if __name__ == '__main__':
-    pytest.main(["./test_baidu_selenium.py", "--alluredir", "../allure-results/"])
+    pytest.main(["test_baidu_selenium.py", "--alluredir", "../allure-results/"])
     # os.system(r"allure serve allure-results")
     os.system(r"allure generate --clean ../allure-results -o ../allure-report")
     os.system(r"allure open ../allure-report")
