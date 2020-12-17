@@ -1,5 +1,5 @@
 import pytest
-from pythoncode.calculator import Calculator
+from pytest_allure.pythoncode.calculator import Calculator
 
 
 @pytest.fixture(scope="module")
