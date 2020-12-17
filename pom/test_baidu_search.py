@@ -1,5 +1,5 @@
 from time import sleep
-import pytest
+import pytest_allure
 from selenium import webdriver
 
 class Testbaidu():
@@ -24,4 +24,4 @@ class Testbaidu():
         self.driver.quit()
 
 if __name__ == '__main__':
-    pytest.main(["test_baidu_search.py"])
+    pytest_allure.main(["test_baidu_search.py"])

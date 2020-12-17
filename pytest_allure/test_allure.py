@@ -51,7 +51,7 @@ class TestAllureALL2:
     @allure.story("story three")
     def test_case_3(self, login_fixture):
         print("测试用例3")
-        allure.attach.file("./data/datas.yml", "Attach with YAML type", attachment_type=allure.attachment_type.YAML)
+        allure.attach.file("../data/datas.yml", "Attach with YAML type", attachment_type=allure.attachment_type.YAML)
         step_1()
 
     @allure.story("story four")
@@ -61,7 +61,7 @@ class TestAllureALL2:
         step_3()
 
 if __name__ == '__main__':
-    pytest.main(["test_allure.py", "--alluredir", "./allure-results/"])
+    pytest.main(["test_allure.py", "--alluredir", "../allure-results/"])
     # os.system(r"allure serve allure-results")
-    os.system(r"allure generate --clean allure-results -o allure-report")
-    os.system(r"allure open allure-report")
+    os.system(r"allure generate --clean ../allure-results -o ../allure-report")
+    os.system(r"allure open ../allure-report")

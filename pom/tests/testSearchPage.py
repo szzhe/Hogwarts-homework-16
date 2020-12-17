@@ -1,4 +1,4 @@
-import pytest
+import pytest_allure
 from selenium import webdriver
 from pom.pages.searchPage import SearchPage
 
@@ -18,4 +18,4 @@ class TestSearchPage(object):
 
 
 if __name__ == '__main__':
-    pytest.main(["testSearchPage.py"])
+    pytest_allure.main(["testSearchPage.py"])
