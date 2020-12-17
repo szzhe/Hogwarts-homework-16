@@ -24,4 +24,4 @@ class Testbaidu():
         self.driver.quit()
 
 if __name__ == '__main__':
-    pytest.main(["test_who.py"])
+    pytest.main(["test_baidu_search.py"])
