@@ -3,4 +3,10 @@
 /allure-report/
 /allure-results/
 /.idea/
+/__pycache__/
+/pom/__pycache__/
+/pom/pages/__pycache__/
+/pom/tests/__pycache__/
+/pytest_allure/__pycache__/
+/pytest_allure/pythoncode/__pycache__/
 
