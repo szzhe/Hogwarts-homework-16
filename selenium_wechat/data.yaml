@@ -3,16 +3,16 @@
   name: wwrtx.refid
   path: /
   secure: false
-  value: '10883435142282356'
+  value: '3171708964785899'
 - domain: work.weixin.qq.com
-  expiry: 1608279820
+  expiry: 1608311357
   httpOnly: true
   name: ww_rtkey
   path: /
   secure: false
-  value: 3atnqh
+  value: 4siml9f
 - domain: .qq.com
-  expiry: 1608334753
+  expiry: 1608368795
   httpOnly: false
   name: _gid
   path: /
@@ -26,7 +26,7 @@
   secure: false
   value: '1_97228571'
 - domain: .qq.com
-  expiry: 1671320353
+  expiry: 1671354395
   httpOnly: false
   name: _ga
   path: /
@@ -60,14 +60,14 @@
   secure: false
   value: '1892557913'
 - domain: .work.weixin.qq.com
-  expiry: 1639746442
+  expiry: 1639812715
   httpOnly: false
   name: Hm_lvt_9364e629af24cb52acc78b43e8c9f77d
   path: /
   secure: false
-  value: 1608110966,1608113918,1608172843,1608210442
+  value: 1608172843,1608210442,1608265428,1608276715
 - domain: .work.weixin.qq.com
-  expiry: 1610840501
+  expiry: 1610874790
   httpOnly: false
   name: wwrtx.i18n_lan
   path: /
