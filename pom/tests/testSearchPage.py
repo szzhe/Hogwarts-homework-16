@@ -1,4 +1,4 @@
-import pytest_allure
+import pytest
 from selenium import webdriver
 from pom.pages.searchPage import SearchPage
 
