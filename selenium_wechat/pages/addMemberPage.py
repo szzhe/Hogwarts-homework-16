@@ -1,6 +1,6 @@
 import yaml
 from selenium.webdriver.common.by import By
-from selenium_wechat.pages.basePage import BasePage
+from selenium_wechat.pages.base_Page import BasePage
 
 class add_memter_Page(BasePage):
 
