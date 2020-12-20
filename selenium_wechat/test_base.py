@@ -4,8 +4,9 @@ import yaml
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-# chrome --remote-debugging-port=9222
-'''CSS常用定位方法
+'''
+chrome --remote-debugging-port=9222
+CSS常用定位方法
     find_element_by_css_selector（）获取元素对象列表
     #id id选择器根据id属性来定位元素
     .class  class选择器，根据class属性值来定位元素
