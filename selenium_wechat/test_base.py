@@ -5,6 +5,13 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 # chrome --remote-debugging-port=9222
+'''CSS常用定位方法
+    find_element_by_css_selector（）获取元素对象列表
+    #id id选择器根据id属性来定位元素
+    .class  class选择器，根据class属性值来定位元素
+    [attribute='value'] 根据属性来定位元素
+    element>element 根据元素层级来定位 父元素>子元素
+'''
 
 def test_get_cookie():
     opt = webdriver.ChromeOptions()
