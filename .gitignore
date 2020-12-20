@@ -9,6 +9,13 @@
 /pom/tests/__pycache__/
 /pytest_allure/__pycache__/
 /pytest_allure/pythoncode/__pycache__/
+<<<<<<< HEAD
 /selenium_wechat/__pycache__/
 /selenium_wechat/pages/__pycache__/
 /selenium_wechat/tests/__pycache__/
+=======
+selenium_wechat/__pycache__/
+selenium_wechat/pages/__pycache__/
+selenium_wechat/tests/__pycache__/
+
+>>>>>>> 50b270e9c1b46ce57700d1108cb299892f167bca
