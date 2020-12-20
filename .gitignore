@@ -9,4 +9,7 @@
 /pom/tests/__pycache__/
 /pytest_allure/__pycache__/
 /pytest_allure/pythoncode/__pycache__/
+selenium_wechat/__pycache__/
+selenium_wechat/pages/__pycache__/
+selenium_wechat/tests/__pycache__/
 
