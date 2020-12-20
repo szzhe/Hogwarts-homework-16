@@ -1,6 +1,6 @@
 import yaml
 from selenium.webdriver.common.by import By
-from selenium_wechat.basePage import BasePage
+from selenium_wechat.pages.basePage import BasePage
 
 class add_memter_Page(BasePage):
 
@@ -19,7 +19,7 @@ class add_memter_Page(BasePage):
         self.driver.maximize_window()
 
     def get_cookie(self):
-        with open("data.yaml", encoding="utf-8") as f:
+        with open("../data.yaml", encoding="utf-8") as f:
             yaml_data = yaml.safe_load(f)
             for cookie in yaml_data:
                 self.driver.add_cookie(cookie)

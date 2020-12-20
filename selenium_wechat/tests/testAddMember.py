@@ -2,7 +2,7 @@ from time import sleep
 
 import pytest
 from selenium import webdriver
-from selenium_wechat.addMember import add_memter_Page
+from selenium_wechat.pages.addMemberPage import add_memter_Page
 
 class TestAddMember():
     def setup(self):
