@@ -28,6 +28,11 @@ class TestMainPage():
         self.driver.implicitly_wait(6)
 
     def test_search(self):
+        '''
+        resource-id会经常发生变化，建议组合Xpath使用
+        :return:
+        '''
+
         # self.driver.find_element(MobileBy.XPATH, '//*[@resource-id="com.tencent.wework:id/a41" and @text="微信登录"]').click()
         # self.driver.find_element(MobileBy.XPATH, '//*[@resource-id="com.tencent.wework:id/gg5"]').click()
         # self.driver.find_element(MobileBy.XPATH, '//*[@resource-id="com.tencent.wework:id/cey"]').click()
