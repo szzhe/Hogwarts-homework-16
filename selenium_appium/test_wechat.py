@@ -1,11 +1,9 @@
-from time import sleep
 
 import pytest
 from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
 
-
-class TestMainPage(object):
+class TestMainPage():
     def setup(self):
         desired_caps = {
             "platformName": "Android",
@@ -38,12 +36,10 @@ class TestMainPage(object):
         self.driver.find_element(MobileBy.XPATH, '//*[@resource-id="com.tencent.wework:id/ig6"]').click()
         self.driver.find_element(MobileBy.XPATH, '//*[@resource-id="com.tencent.wework:id/auq"]').click()
         result_dk = self.driver.find_element(MobileBy.XPATH, '//*[@resource-id="com.tencent.wework:id/av0"]').text
-        print(result_dk)
         assert '今日打卡已完成，好好休息' in result_dk
 
     def teardown(self):
         self.driver.quit()
-
 
 if __name__ == '__main__':
     pytest.main(["test_wechat.py", "-s", "-v"])
