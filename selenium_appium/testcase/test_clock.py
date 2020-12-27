@@ -1,7 +1,5 @@
 import pytest
-
 from selenium_appium.po.app import App
-
 
 class TestClock():
     def test_push_clock(self):
