@@ -1,4 +1,6 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
@@ -14,3 +16,6 @@ class BasePage:
 
     def find_sendkeys(self, by, locator, text):
         self.find(by, locator).send_keys(f"{text}")
+
+    def wait_click(self, by, locator):
+        return WebDriverWait(self.driver, 9).until(expected_conditions.element_to_be_clickable((by, locator)))
