@@ -1,9 +1,5 @@
 from selenium.webdriver.common.by import By
-
 from selenium_wechat.pages.base_page import BasePage
-
-
-# from selenium_wechat.pages.contact_page import ContactPage
 
 class AddMember(BasePage):
     # chrome - -remote - debugging - port = 9222
@@ -13,4 +9,8 @@ class AddMember(BasePage):
         self.find_sendkeys(By.ID, "memberAdd_acctid", "szzhe")
         self.find_sendkeys(By.ID, "memberAdd_phone", "13901234567")
         self.find_click(By.CSS_SELECTOR, "[class='qui_btn ww_btn js_btn_save']")
-        return True
+
+        # 解决循环导入的问题
+        from selenium_wechat.pages.contact_page import ContactPage
+
+        return ContactPage(self.driver)
