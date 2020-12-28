@@ -14,14 +14,13 @@ class ContactPage(BasePage):
         return AddMember(self.driver)
 
     def get_member(self):
+        _location_member_list = (By.CSS_SELECTOR, ".member_colRight_memberTable_td:nth-child(2)")
         '''
         获取成员列表，用来做断言信息
         :return:
         '''
-        member_list = self.finds(By.CSS_SELECTOR, ".member_colRight_memberTable_td:nth-child(2)")
+        member_list = self.finds(*_location_member_list)
+        print(member_list)
         # member_list_res = [i.text for i in member_list]
-        member_list_res = []
-        for i in member_list:
-            member_list_res.append(i)
-        print(member_list_res)
-        return member_list_res
+        # print(member_list_res)
+        # return member_list_res

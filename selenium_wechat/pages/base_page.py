@@ -14,8 +14,13 @@ class BasePage:
     def find_click(self, by, locator):
         self.find(by, locator).click()
 
-    def finds(self, by, locator):
-        return self.driver.find_elements(by, locator)
+    def finds(self, by, value=None):
+        if value is None:
+            # 如果传入的是一个元祖，则进行解包元祖传参
+            return self.driver.find_elements(*by)
+        else:
+            # 如果传入的是正常的定位信息，则正常传参
+            return self.driver.find_elements(by=by, value=value)
 
     def find_sendkeys(self, by, locator, text):
         self.find(by, locator).send_keys(f"{text}")

@@ -24,7 +24,7 @@ class Browser(BasePage):
             else:
                 for cookie in yaml_data:
                     self.driver.add_cookie(cookie)
-            self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
+        self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
 
     def __cookie_get(self):
         cookies = self.driver.get_cookies()
