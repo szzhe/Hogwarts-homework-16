@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium_wechat.pages.base_page import BasePage
 
 class AddMember(BasePage):
-    # chrome - -remote - debugging - port = 9222
+    # chrome --remote -debugging -port=9222
 
     def add_member(self):
         self.find_sendkeys(By.ID, "username", "松")
