@@ -21,12 +21,16 @@ class TestAddMember:
         res = self.add_member.goto_main().goto_contact().goto_add_member().add_member().get_member()
         assert '松' in res
 
+    @pytest.mark.skip
     @pytest.mark.parametrize("accid, phone, expect_res",
                              [("YinXiaoShiDa", "13199998888", "该帐号已被“宋小哲”占有"),
                               ("xx2", "15810795067", "该手机号已被“宋振哲”占有")])
     def test_add_member_fail(self, accid, phone, expect_res):
         res = self.add_member.goto_main().goto_add_member().add_member_fail(accid, phone)
         assert expect_res in res
+
+    def test_add_branch(self):
+        self.add_member.goto_main().goto_contact().goto_add_branch()
 
     def quit(self):
         self.quit()

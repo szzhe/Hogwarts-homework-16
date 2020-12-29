@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
 from selenium_wechat.pages.base_page import BasePage
 from selenium_wechat.pages.add_member_page import AddMember
 
@@ -24,3 +26,25 @@ class ContactPage(BasePage):
         member_list = self.finds(*_location_member_list)
         member_list_res = [i.text for i in member_list]
         return member_list_res
+
+    def goto_add_branch(self):
+        _location_add_branch = (By.CSS_SELECTOR, ".js_create_dropdown")
+        _location_create_braach = (By.CSS_SELECTOR, ".js_create_party")
+        _location_branch_name = (By.CSS_SELECTOR, ".inputDlg_item .ww_inputText", "szzhe")
+        _location_branch_parent = (By.CSS_SELECTOR, ".js_parent_party_name")
+        _location_branch_parent_anchor = (
+        By.XPATH, "//*[@id='__dialog__MNDialog__']/div/div[2]/div/form/div[3]/div/div", Keys.ENTER)
+        _location_branch_submit = (By.XPATH, "//*[@id='__dialog__MNDialog__']/div/div[3]/a[1]")
+
+        self.wait_click(*_location_add_branch)
+        self.find_click(*_location_add_branch)
+        self.find_click(*_location_create_braach)
+
+        self.wait_locate(By.CSS_SELECTOR, ".inputDlg_item .ww_inputText")
+        self.find_sendkeys(*_location_branch_name)
+        self.find_click(*_location_branch_parent)
+        self.find_sendkeys(*_location_branch_parent_anchor)
+        self.find_click(*_location_branch_submit)
+
+        tips = self.find(By.CSS_SELECTOR, "#js_tips").text
+        assert "新建部门成功" in tips
