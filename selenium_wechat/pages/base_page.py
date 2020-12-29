@@ -20,7 +20,6 @@ class BasePage:
             self.find(by=by, locator=locator).click()
 
     def finds(self, by, locator=None):
-        print(">>>", by, locator)
         if locator is None:  # <class 'str'>
             # 如果传入的是一个元祖，则进行解包元祖传参
             return self.driver.find_elements(*by)
