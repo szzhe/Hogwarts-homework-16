@@ -1,14 +1,12 @@
 
-# 霍格沃兹测试开发
+# selenium_wechat 实现功能
+- POM模式
+- 首页-添加成员
+- 首页-通讯录-添加成员
+- 首页-通讯录-添加部门
 
-- echo "# Hogwarts-homework-16" >> README.md
-- git init
-- git add README.md
-- git commit -m "first commit"
-- git branch -M master
-- git remote add origin https://github.com/szzhe/Hogwarts-homework-16.git
-- git push -u origin master
+# selenium_appium 实现功能
+- POM模式
+- 工作台-打卡
 
-- data  yaml数据文件
-- pom   pom设计模式
-- pytest_allure 字面意思，练习
+
