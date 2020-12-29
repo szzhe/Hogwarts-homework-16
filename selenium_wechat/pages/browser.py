@@ -7,14 +7,14 @@ from selenium_wechat.pages.main_page import MainPage
 class Browser(BasePage):
     def start(self, base_driver: WebDriver = None):
         if base_driver is None:
-            opt = webdriver.ChromeOptions()
-            opt.debugger_address = "127.0.0.1:9222"
-            self.driver = webdriver.Chrome(options=opt)
-            self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx")
+            self.opt = webdriver.ChromeOptions()
+            self.opt.debugger_address = "127.0.0.1:9222"
+            self.driver = webdriver.Chrome(options=self.opt)
+            self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?")
             self.__cookie_login()
         else:
             self.driver = base_driver
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(5)
 
     def __cookie_login(self):
         with open("../datas/data.yml", encoding="utf-8") as f:

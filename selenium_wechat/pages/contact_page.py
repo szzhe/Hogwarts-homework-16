@@ -4,13 +4,14 @@ from selenium_wechat.pages.add_member_page import AddMember
 
 class ContactPage(BasePage):
     def goto_add_member(self):
+        _location_add_member = (By.CSS_SELECTOR, ".ww_operationBar .js_add_member")
         '''
         添加成员操作
         :return:
         '''
         # 解决循环导入的问题
-        self.wait_click(By.CSS_SELECTOR, ".ww_operationBar .js_add_member")
-        self.find_click(By.CSS_SELECTOR, ".ww_operationBar .js_add_member")
+        self.wait_click(*_location_add_member)
+        self.find_click(*_location_add_member)
         return AddMember(self.driver)
 
     def get_member(self):
@@ -19,8 +20,7 @@ class ContactPage(BasePage):
         获取成员列表，用来做断言信息
         :return:
         '''
+        self.wait_click(*_location_member_list)
         member_list = self.finds(*_location_member_list)
-        print(member_list)
-        # member_list_res = [i.text for i in member_list]
-        # print(member_list_res)
-        # return member_list_res
+        member_list_res = [i.text for i in member_list]
+        return member_list_res
