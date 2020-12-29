@@ -10,7 +10,7 @@ class Browser(BasePage):
             self.opt = webdriver.ChromeOptions()
             self.opt.debugger_address = "127.0.0.1:9222"
             self.driver = webdriver.Chrome(options=self.opt)
-            self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?")
+            self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx")
             self.__cookie_login()
         else:
             self.driver = base_driver
@@ -23,6 +23,8 @@ class Browser(BasePage):
                 self.__cookie_get()
             else:
                 for cookie in yaml_data:
+                    if "expiry" in cookie:
+                        cookie.pop("expiry")
                     self.driver.add_cookie(cookie)
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
 

@@ -9,7 +9,6 @@ class TestAddMember:
         self.add_member = Browser()
         self.add_member.start()
 
-    @pytest.mark.skip
     def test_add_member(self):
         # 1.跳转添加成员页面  2. 添加成员 3. 自动跳转到通讯录页面
         res = self.add_member.goto_main().goto_add_member().add_member().get_member()
@@ -29,6 +28,7 @@ class TestAddMember:
         res = self.add_member.goto_main().goto_add_member().add_member_fail(accid, phone)
         assert expect_res in res
 
+    @pytest.mark.skip
     def test_add_branch(self):
         self.add_member.goto_main().goto_contact().goto_add_branch()
 
