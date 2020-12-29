@@ -33,10 +33,6 @@ class BasePage:
     def wait_locate(self, by, locator):
         return WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located((by, locator)))
 
-    def wait_select(self, by, locator):
-        return WebDriverWait(self.driver, 10).until(
-            expected_conditions.element_to_be_selected(self.driver.find_element(by, locator)))
-
     def wait_click(self, by, locator):
         return WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable((by, locator)))
 
