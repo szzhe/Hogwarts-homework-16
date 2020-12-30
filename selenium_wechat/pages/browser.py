@@ -30,10 +30,12 @@ class Browser(BasePage):
 
     def __cookie_get(self):
         cookies = self.driver.get_cookies()
-        if "exopiry" in cookies:
-            cookies['expiry'] = int(cookies['expiry'])
-            # cookies.pop("expiry")
+        print(">", cookies)
+        for cookie in cookies:
+            if "expiry" in cookie.keys():
+                del cookie["expiry"]
         with open("../datas/data.yml", "w", encoding="utf-8") as f:
+            print(">>>", cookies)
             yaml.dump(cookies, f)
 
     def goto_main(self):
