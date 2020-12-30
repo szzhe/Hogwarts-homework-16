@@ -1,10 +1,10 @@
 from appium import webdriver
-
+from appium.webdriver.webdriver import WebDriver
 from selenium_appium.po.base_page import BasePage
 from selenium_appium.po.main_page import MainPage
 
 class App(BasePage):
-    def start(self):
+    def start(self, driver: WebDriver = None):
         if self.driver is None:
             desired_caps = {}
             desired_caps["platformName"] = "Android"
@@ -18,7 +18,7 @@ class App(BasePage):
             desired_caps["unicodeKeyBoard"] = "true"
             desired_caps["resetKeyBoard"] = "true"
             # desired_caps["skipServerInstallation"] = "true",
-            # desired_caps["dontStopAppOnReset"] = "true",
+            # desired_caps["dontStopAppOnReset"] = True
             # desired_caps["skipDeviceInitialization"] = "true",
             desired_caps["ensureWebviewsHavePages"] = True
             desired_caps["settings[waitForIdleTimeout]"] = 0

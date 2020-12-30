@@ -4,14 +4,20 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
 class BasePage:
-    def __init__(self, driver: WebDriver = None):
-        self.driver = driver
+    def __init__(self, base_driver: WebDriver = None):
+        self.driver = base_driver
 
-    def find(self, by, locator):
-        return self.driver.find_element(by, locator)
+    def find(self, by, locator=None):
+        if locator is None:
+            return self.driver.find_element(*by)
+        else:
+            return self.driver.find_element(by=by, value=locator)
 
-    def find_and_click(self, by, locator):
-        self.find(by, locator).click()
+    def find_click(self, by, locator=None):
+        if locator is None:
+            self.find(*by).click()
+        else:
+            self.find(by=by, locator=locator).click()
 
     def scroll_find(self, text):
         return self.driver.find_element(MobileBy.
@@ -22,8 +28,13 @@ class BasePage:
     def scroll_find_click(self, text):
         self.scroll_find(text).click()
 
-    def wait_for(self, by, locator):
-        WebDriverWait(self.driver, 10).until(
-            ec.visibility_of_element_located((by, locator)))
+    def wait_located(self, by, locator=None):
+        if locator is None:
+            return WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(*by))
+        else:
+            return WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((by, locator)))
+
+    def quit(self):
+        self.driver.quit()
 
 
