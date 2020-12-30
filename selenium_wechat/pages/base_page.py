@@ -35,6 +35,3 @@ class BasePage:
 
     def wait_click(self, by, locator):
         return WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable((by, locator)))
-
-    def quit(self):
-        self.driver.quit()
