@@ -23,8 +23,6 @@ class Browser(BasePage):
                 self.__cookie_get()
             else:
                 for cookie in yaml_data:
-                    if "expiry" in cookie:
-                        cookie.pop("expiry")
                     self.driver.add_cookie(cookie)
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
 
