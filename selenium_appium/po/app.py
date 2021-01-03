@@ -14,12 +14,12 @@ class App(BasePage):
             desired_caps["appActivity"] = ".launch.LaunchSplashActivity"
             # desired_caps["appActivity"] = ".launch.WwMainActivity",
             # desired_caps["appActivity"] = ".login.controller.LoginWxAuthActivity",
-            desired_caps["noReset"] = "true"
-            desired_caps["unicodeKeyBoard"] = "true"
-            desired_caps["resetKeyBoard"] = "true"
-            # desired_caps["skipServerInstallation"] = "true",
+            desired_caps["noReset"] = True
+            desired_caps["unicodeKeyBoard"] = True
+            desired_caps["resetKeyBoard"] = True
+            desired_caps["skipServerInstallation"] = True
             # desired_caps["dontStopAppOnReset"] = True
-            # desired_caps["skipDeviceInitialization"] = "true",
+            desired_caps["skipDeviceInitialization"] = True
             desired_caps["ensureWebviewsHavePages"] = True
             desired_caps["settings[waitForIdleTimeout]"] = 0
             self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)

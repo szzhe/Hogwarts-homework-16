@@ -19,6 +19,12 @@ class BasePage:
         else:
             self.find(by=by, locator=locator).click()
 
+    def find_and_send(self, by, locator, text):
+        if locator is None:
+            self.find(*by).send_keys(text)
+        else:
+            self.find(by=by, locator=locator).send_keys(text)
+
     def scroll_find(self, text):
         return self.driver.find_element(MobileBy.
                              ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().'
@@ -30,9 +36,16 @@ class BasePage:
 
     def wait_located(self, by, locator=None):
         if locator is None:
-            return WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(*by))
+            return WebDriverWait(self.driver, 10).until(ec.presence_of_element_located(*by))
         else:
             return WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((by, locator)))
+
+    def wait_for(self, by, locator):
+        def wait_ele_for(driver: WebDriver):
+            eles = driver.find_elements(by, locator)
+            return len(eles) > 0
+
+        WebDriverWait(self.driver, 10).until(wait_ele_for)
 
     def quit(self):
         self.driver.quit()
