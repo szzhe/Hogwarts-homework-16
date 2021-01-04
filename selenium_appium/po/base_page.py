@@ -31,7 +31,7 @@ class BasePage:
                                         ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().'
                                                              'scrollable(true).instance(0)).'
                                                              'getChildByText(new UiSelector().'
-                                                             'className("android.widget.TextView"), "' + f"{text}" + '")')
+                                                             'className("android.widget.TextView"), "'+f"{text}"+'")')
 
     def scroll_find_click(self, text):
         self.scroll_find(text).click()
