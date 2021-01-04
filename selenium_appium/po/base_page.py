@@ -3,6 +3,7 @@ from appium.webdriver.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
+
 class BasePage:
     def __init__(self, base_driver: WebDriver = None):
         self.driver = base_driver
@@ -27,18 +28,21 @@ class BasePage:
 
     def scroll_find(self, text):
         return self.driver.find_element(MobileBy.
-                             ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().'
-                                                  'scrollable(true).instance(0)).'
-                                                  'scrollIntoView(new UiSelector().'
-                                                  f'text("{text}").instance(0));')
+                                        ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().'
+                                                             'scrollable(true).instance(0)).'
+                                                             'getChildByText(new UiSelector().'
+                                                             'className("android.widget.TextView"), "' + f"{text}" + '")')
+
     def scroll_find_click(self, text):
         self.scroll_find(text).click()
 
     def wait_located(self, by, locator=None):
         if locator is None:
-            return WebDriverWait(self.driver, 10).until(ec.presence_of_element_located(*by))
+            return WebDriverWait(self.driver, 10).until(
+                ec.presence_of_element_located(*by))
         else:
-            return WebDriverWait(self.driver, 10).until(ec.presence_of_element_located((by, locator)))
+            return WebDriverWait(self.driver, 10).until(
+                ec.presence_of_element_located((by, locator)))
 
     def wait_for(self, by, locator):
         def wait_ele_for(driver: WebDriver):
@@ -49,5 +53,3 @@ class BasePage:
 
     def quit(self):
         self.driver.quit()
-
-
