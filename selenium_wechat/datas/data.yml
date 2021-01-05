@@ -1,27 +1,15 @@
 - domain: .work.weixin.qq.com
+  httpOnly: false
+  name: wwrtx.d2st
+  path: /
+  secure: false
+  value: a3689020
+- domain: .work.weixin.qq.com
   httpOnly: true
   name: wwrtx.vst
   path: /
   secure: false
-  value: 9r-SvLmGCyqz_rvjlAL1CRd5mgzvdVC7mp3IMVVP35YQTvW5Cyl5sdOS4h1jHG2HP6Am0J26-IQAzPDZGKPAoqpTpWrpzuBW6-doh0c8J1T-f36aNyhbRfP0FxR_Rf7fnVkIqh3x9p6OiM5dyCQon-pRNV8RyxlFum75ftjTE-yxByTYKiecMZ8gdJ33HFE0wQJgXDail5_zPyN09hnF4MeAgNOIQq0MzjM34BwiP-3dpHHoeN2h2BtwNS5GhAcZC5Xk7t-zBQiwzaAXgyugBg
-- domain: .work.weixin.qq.com
-  httpOnly: true
-  name: wwrtx.refid
-  path: /
-  secure: true
-  value: '10883435142861645'
-- domain: .qq.com
-  httpOnly: false
-  name: _gat
-  path: /
-  secure: true
-  value: '1'
-- domain: .work.weixin.qq.com
-  httpOnly: true
-  name: wwrtx.ltype
-  path: /
-  secure: true
-  value: '1'
+  value: EjznTwEyo6DnsaDv7cL2pbKyVJz48iMiiK1VieCIxetPwFLH4NCK_-06ub9-pJyBbTVBUxcHfsozq19RXpAB8JPP4ObpcdJHD6WuZqdjCke89_szD9i7VVLQTCUtxW2TnO1jAL2IhXwSkAY2xryduKDchX7ZXv1fue-2X8aJhcOg6OWHl2OvFsTNBXOCkZefgfU6KYvI0Yuu9a_wS-L-tVuV1qXCMYBFsa8vmmzcp_ELfIzShQ0RMqhQrNk0yDlADgyPY-5a-v0igGCt6ZYv3A
 - domain: .work.weixin.qq.com
   httpOnly: false
   name: wwrtx.vid
@@ -41,17 +29,83 @@
   secure: false
   value: '1688852004633108'
 - domain: .work.weixin.qq.com
-  httpOnly: true
-  name: wwrtx.sid
-  path: /
-  secure: true
-  value: nZU7eO0VWnPhNRBipTqpC9sbkGsccYr6LrTb80b2km8BPKdzfjsseocWXXc3mbmQ
-- domain: .work.weixin.qq.com
   httpOnly: false
   name: wxpay.corpid
   path: /
   secure: false
   value: '1970325084208603'
+- domain: .qq.com
+  httpOnly: false
+  name: pgv_pvid
+  path: /
+  secure: false
+  value: '6223629920'
+- domain: .work.weixin.qq.com
+  httpOnly: true
+  name: wwrtx.ltype
+  path: /
+  secure: false
+  value: '1'
+- domain: .qq.com
+  httpOnly: false
+  name: _gat
+  path: /
+  secure: true
+  value: '1'
+- domain: .qq.com
+  httpOnly: false
+  name: _gid
+  path: /
+  secure: false
+  value: GA1.2.1475447950.1609206468
+- domain: work.weixin.qq.com
+  httpOnly: true
+  name: ww_rtkey
+  path: /
+  secure: false
+  value: 57p61l5
+- domain: .work.weixin.qq.com
+  httpOnly: true
+  name: wwrtx.sid
+  path: /
+  secure: false
+  value: nZU7eO0VWnPhNRBipTqpC5r5TlIzo0XJnS_H00mXAtGdNyDT-rkjKCF_HSPIGIj2
+- domain: .work.weixin.qq.com
+  httpOnly: false
+  name: wwrtx.c_gdpr
+  path: /
+  secure: true
+  value: '0'
+- domain: .qq.com
+  httpOnly: false
+  name: pac_uid
+  path: /
+  secure: false
+  value: 0_cdc5a5b405591
+- domain: .work.weixin.qq.com
+  httpOnly: false
+  name: wwrtx.i18n_lan
+  path: /
+  secure: false
+  value: zh
+- domain: .work.weixin.qq.com
+  httpOnly: true
+  name: wwrtx.refid
+  path: /
+  secure: true
+  value: '10883435142861645'
+- domain: .qq.com
+  httpOnly: false
+  name: ptcz
+  path: /
+  secure: false
+  value: 12063ec8a181c19b0253062a009df4a3bfb34808f8ae289b8ca1ea4ad6b55123
+- domain: .qq.com
+  httpOnly: false
+  name: RK
+  path: /
+  secure: false
+  value: 7T6hQte6Wl
 - domain: .work.weixin.qq.com
   httpOnly: true
   name: wwrtx.ref
@@ -64,33 +118,3 @@
   path: /
   secure: false
   value: GA1.2.1847895761.1609206468
-- domain: work.weixin.qq.com
-  httpOnly: true
-  name: ww_rtkey
-  path: /
-  secure: false
-  value: 2f9h3i9
-- domain: .qq.com
-  httpOnly: false
-  name: _gid
-  path: /
-  secure: false
-  value: GA1.2.1475447950.1609206468
-- domain: .work.weixin.qq.com
-  httpOnly: false
-  name: wwrtx.i18n_lan
-  path: /
-  secure: false
-  value: zh
-- domain: .work.weixin.qq.com
-  httpOnly: false
-  name: wwrtx.d2st
-  path: /
-  secure: true
-  value: a734526
-- domain: .work.weixin.qq.com
-  httpOnly: false
-  name: wwrtx.c_gdpr
-  path: /
-  secure: true
-  value: '0'
