@@ -3,33 +3,23 @@ from appium.webdriver.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
+from test_frame.blank_handle import blank_warpper
+
 
 class BasePage:
     def __init__(self, driver: WebDriver = None):
         self.driver = driver
         self.blank_list = [(By.XPATH, '//*[@resource-id="com.xueqiu.android:id/iv_close"]')]
 
-    # def find(self, by, locator=None):
-    #     if locator is None:
-    #         return self.driver.find_element(*by)
-    #     else:
-    #         return self.driver.find_element(by=by, value=locator)
-
-    def find(self, by, locator):
-        try:
-            return self.driver.find_element(by, locator)
-        # 捕获元素没找到异常
-        except Exception as e:
-            for blank in self.blank_list:
-                eles = self.finds(blank)
-                if len(eles) > 0:
-                    # 对黑名单元素进行点击
-                    eles[0].click()
-                    return self.find(by, locator)
-            return e
+    @blank_warpper
+    def find(self, by, locator=None):
+        if locator is None:
+            return self.driver.find_element(*by)
+        else:
+            return self.driver.find_element(by=by, value=locator)
 
     def finds(self, by, locator):
-            return self.driver.find_elements(by, locator)
+        return self.driver.find_elements(by, locator)
 
     def find_and_click(self, by, locator=None):
         if locator is None:
