@@ -3,6 +3,8 @@ from test_frame.app import App
 
 class TestSearch:
     '''
+    1.testcase目录下创建screenshot目录，存放黑名单blank截图.
+    2.testcase目录下存放allure_result报表，
     pytest test_search.py --alluredir ./allure_result
     allure serve ./allure_result
     '''
