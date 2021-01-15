@@ -1,5 +1,7 @@
 import pytest
-from test_frame.app import App
+from test_frame.base_page import BasePage
+from test_frame.page.main import Main
+
 
 class TestSearch:
     '''
@@ -10,14 +12,14 @@ class TestSearch:
     3.CMD命令行，执行scrcpy --record file.mp4开始录制，ctrl+c中断录制
     '''
     def setup(self):
-        self.app = App()
-        self.app.start()
+        basepage = BasePage()
+        self.app = Main(basepage)
 
     def test_search(self):
-        self.app.goto_main().goto_market().goto_search().search()
+        self.app.goto_market().goto_search().search()
 
     def teardown(self):
-        self.app.quit()
+        self.app.basepage.quit()
 
 if __name__ == '__main__':
     pytest.main(["test_search.py"])

@@ -1,4 +1,5 @@
 import yaml
+from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver
 from selenium.webdriver.common.by import By
@@ -14,8 +15,21 @@ class BasePage:
     FIND_AND_SEND = "find_and_send"
     CONTENT = "content"
 
-    def __init__(self, driver: WebDriver = None):
-        self.driver = driver
+    def __init__(self):
+        desired_caps = {}
+        desired_caps["platformName"] = "Android"
+        desired_caps["platformVersion"] = "6.0.1"
+        desired_caps["deviceName"] = "127.0.0.1:7555"
+        # desired_caps["platformVersion"] = "10.0.0.180"
+        # desired_caps["deviceName"] = "D5F7N18611005773"
+        desired_caps["appPackage"] = "com.xueqiu.android"
+        desired_caps["appActivity"] = ".view.WelcomeActivityAlias"
+        desired_caps["noReset"] = True
+        desired_caps["unicodeKeyBoard"] = True
+        desired_caps["resetKeyBoard"] = True
+        self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)
+        self.driver.implicitly_wait(5)
+
         self.blank_list = [(By.XPATH, '//*[@resource-id="com.xueqiu.android:id/iv_close"]')]
 
     @blank_warpper
