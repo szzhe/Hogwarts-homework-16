@@ -9,5 +9,8 @@ class TestSearch:
     def test_search(self):
         self.app.goto_main().goto_market().goto_search().search()
 
+    def teardown(self):
+        self.app.quit()
+
 if __name__ == '__main__':
     pytest.main(["test_search.py", '-s', '-v'])

@@ -1,3 +1,4 @@
+import yaml
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver
 from selenium.webdriver.common.by import By
@@ -27,11 +28,12 @@ class BasePage:
         else:
             self.find(by=by, locator=locator).click()
 
-    def find_and_send(self, by, locator, text):
+    def find_and_send(self, by, locator, content):
         if locator is None:
-            self.find(*by).send_keys(text)
+            self.find(*by).send_keys(content)
         else:
-            self.find(by=by, locator=locator).send_keys(text)
+            self.find(by=by, locator=locator).send_keys(content)
+        # self.find(by=by, locator=locator).send_keys(content)
 
     def scroll_find(self, text):
         return self.driver.find_element(MobileBy.
@@ -60,3 +62,15 @@ class BasePage:
 
     def quit(self):
         self.driver.quit()
+
+    def yaml_load(self, yaml_path):
+        with open(yaml_path, encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+        for step in data:
+            xpath_expr = step.get("find")
+            action = step.get("action")
+            if action == "find_and_click":
+                self.find_and_click(MobileBy.XPATH, xpath_expr)
+            elif action == "find_and_send":
+                content = step.get("content")
+                self.find_and_send(MobileBy.XPATH, xpath_expr, content)
