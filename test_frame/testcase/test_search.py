@@ -7,6 +7,7 @@ class TestSearch:
     2.testcase目录下存放allure_result报表，
     pytest test_search.py --alluredir ./allure_result
     allure serve ./allure_result
+    3.CMD命令行，执行scrcpy --record file.mp4开始录制，ctrl+c中断录制
     '''
     def setup(self):
         self.app = App()
@@ -19,4 +20,4 @@ class TestSearch:
         self.app.quit()
 
 if __name__ == '__main__':
-    pytest.main(["test_search.py", '-s', '-v'])
+    pytest.main(["test_search.py"])
