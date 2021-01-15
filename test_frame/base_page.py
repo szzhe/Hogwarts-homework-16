@@ -8,6 +8,12 @@ from test_frame.blank_handle import blank_warpper
 
 
 class BasePage:
+    FIND = "find"
+    ACTION = "action"
+    FIND_AND_CLICK = "find_and_click"
+    FIND_AND_SEND = "find_and_send"
+    CONTENT = "content"
+
     def __init__(self, driver: WebDriver = None):
         self.driver = driver
         self.blank_list = [(By.XPATH, '//*[@resource-id="com.xueqiu.android:id/iv_close"]')]
@@ -67,10 +73,13 @@ class BasePage:
         with open(yaml_path, encoding="utf-8") as f:
             data = yaml.safe_load(f)
         for step in data:
-            xpath_expr = step.get("find")
-            action = step.get("action")
-            if action == "find_and_click":
+            xpath_expr = step.get(self.FIND)
+            action = step.get(self.ACTION)
+            if action == self.FIND_AND_CLICK:
                 self.find_and_click(MobileBy.XPATH, xpath_expr)
-            elif action == "find_and_send":
-                content = step.get("content")
+            elif action == self.FIND_AND_SEND:
+                content = step.get(self.CONTENT)
                 self.find_and_send(MobileBy.XPATH, xpath_expr, content)
+
+    def screenshot(self, picture_path):
+        self.driver.save_screenshot(picture_path)
