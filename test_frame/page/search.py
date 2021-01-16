@@ -6,6 +6,6 @@ class Search(PrePage):
     def search(self):
         # self.find(MobileBy.XPATH, '//*[@resource-id="com.xueqiu.android:id/search_input_text"]').send_keys("xx")
 
-        self.basepage.yaml_load("../page/search.yaml")
+        self.driver.yaml_load("../page/search.yaml")
 
         return True

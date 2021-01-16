@@ -2,7 +2,6 @@ import pytest
 from test_frame.base_page import BasePage
 from test_frame.page.main import Main
 
-
 class TestSearch:
     '''
     1.testcase目录下创建screenshot目录，存放黑名单blank截图.
@@ -19,7 +18,7 @@ class TestSearch:
         self.app.goto_market().goto_search().search()
 
     def teardown(self):
-        self.app.basepage.quit()
+        self.app.driver.quit()
 
 if __name__ == '__main__':
     pytest.main(["test_search.py"])

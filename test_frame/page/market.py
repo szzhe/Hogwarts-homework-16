@@ -6,6 +6,6 @@ class Market(PrePage):
     def goto_search(self):
         # self.find_and_click(MobileBy.XPATH, '//*[@resource-id="com.xueqiu.android:id/action_search"]')
 
-        self.basepage.yaml_load("../page/market.yaml")
+        self.driver.yaml_load("../page/market.yaml")
 
-        return Search(self.basepage)
+        return Search(self.driver)

@@ -1,5 +1,5 @@
 from test_frame.base_page import BasePage
 
 class PrePage:
-    def __init__(self, basepage: BasePage):
-        self.basepage = basepage
+    def __init__(self, driver: BasePage):
+        self.driver = driver

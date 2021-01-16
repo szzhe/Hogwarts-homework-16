@@ -7,7 +7,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from test_frame.blank_handle import blank_warpper
 
-
 class BasePage:
     FIND = "find"
     ACTION = "action"
@@ -53,7 +52,6 @@ class BasePage:
             self.find(*by).send_keys(content)
         else:
             self.find(by=by, locator=locator).send_keys(content)
-        # self.find(by=by, locator=locator).send_keys(content)
 
     def scroll_find(self, text):
         return self.driver.find_element(MobileBy.
