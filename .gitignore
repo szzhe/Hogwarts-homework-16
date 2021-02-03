@@ -17,3 +17,6 @@
 /selenium_wechat/po/__pycache__/
 /selenium_wechat/testcase/__pycache__/
 /selenium_appium/testcase/__pycache__/
+/pom_xueqiu/__pycache__/
+/pom_xueqiu/page/
+/pom_xueqiu/testcase/__pycache__/
